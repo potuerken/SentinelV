@@ -10,6 +10,7 @@ using Core.Utilities.IoC;
 using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -51,6 +52,13 @@ namespace WebApi
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
+
+            services.AddAuthorization(config => {
+                var def = config.DefaultPolicy;
+                config.DefaultPolicy = new AuthorizationPolicy(def.Requirements,
+                    new List<string>() { "Bearer" });
+            });
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -62,9 +70,12 @@ namespace WebApi
                         ValidIssuer = tokenOptions.Issuer,
                         ValidAudience = tokenOptions.Audience,
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
+                        IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey),
+                        ClockSkew = TimeSpan.Zero
                     };
                 });
+
+
 
             services.AddDependencyResolvers(new ICoreModule[] {
                new CoreModule()
@@ -89,6 +100,8 @@ namespace WebApi
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.UseStatusCodePages();
 
             app.UseEndpoints(endpoints =>
             {

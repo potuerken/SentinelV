@@ -23,7 +23,7 @@ namespace WebApi.Controllers
         [HttpGet("getpersonel")]
         [Authorize]
         public IActionResult GetPersonel()
-        {
+        {   
             var personelList = _personelService.GetPersonelList();
             if (personelList.Success)
                 return Ok(personelList.Data);
