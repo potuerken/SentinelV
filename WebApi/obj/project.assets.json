@@ -83,7 +83,7 @@
           "lib/netstandard2.0/FluentValidation.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.12": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.18": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
@@ -1873,10 +1873,10 @@
         "lib/netstandard2.0/FluentValidation.xml"
       ]
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.12": {
-      "sha512": "Kl6VnydiO9kh4xGo5PugXYViy6kVNxV3UrAvF1sDmMTpkSKtcLsdHWVflzGTD8HUnm8VpvzF1z9/1cmNBeYXOg==",
+    "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.18": {
+      "sha512": "aymAjo2uHu67eKYlD1b7VLgx9ixbUnl7X9ykr3M3Di8upjMSAF8VbIeY+/mIf5BRjK4hhLfCiR5asR7+jV4a5Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.12",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.18",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1884,7 +1884,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
         "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
-        "microsoft.aspnetcore.authentication.jwtbearer.3.1.12.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.3.1.18.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
@@ -6247,7 +6247,7 @@
     ".NETCoreApp,Version=v3.1": [
       "Autofac.Extensions.DependencyInjection >= 7.1.0",
       "Business >= 1.0.0",
-      "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.12"
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.18"
     ]
   },
   "packageFolders": {
@@ -6297,7 +6297,7 @@
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
-            "version": "[3.1.12, )"
+            "version": "[3.1.18, )"
           }
         },
         "imports": [
