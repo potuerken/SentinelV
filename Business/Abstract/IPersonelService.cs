@@ -1,8 +1,6 @@
-﻿using Core.Utilities.Results;
-using Entities.DTO;
-using System;
+﻿using Check.DTO;
+using Core.Utilities.Results;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Abstract
 {

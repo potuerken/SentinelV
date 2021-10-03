@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
-using Entities.DTO;
-using Microsoft.AspNetCore.Authorization;
+using Check.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -16,7 +15,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login(UserForLoginDto dto)
+        public IActionResult Login(KullaniciGirisDTO dto)
         {
             var user = _authService.Login(dto);
 
@@ -32,7 +31,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult Register(Entities.DTO.UserForRegisterDto dto)
+        public IActionResult Register(KullaniciKayitDTO dto)
         {
             // Kullanıcı var mı kontrol et
             var exists = _authService.UserExists(dto.Email);

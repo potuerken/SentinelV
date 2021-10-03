@@ -12,18 +12,19 @@ namespace WebApi.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    //[Authorize]
     public class PersonelController : ControllerBase
     {
         IPersonelService _personelService;
+
         public PersonelController(IPersonelService personelService)
         {
             _personelService = personelService;
         }
 
         [HttpGet("getpersonel")]
-        [Authorize]
         public IActionResult GetPersonel()
-        {   
+        {
             var personelList = _personelService.GetPersonelList();
             if (personelList.Success)
                 return Ok(personelList.Data);

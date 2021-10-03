@@ -19,6 +19,9 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<UtilitesManager>().As<IUtilitesService>().SingleInstance();
+            builder.RegisterType<EfUtilitesDal>().As<IUtilitesDal>().SingleInstance();
+
             builder.RegisterType<PersonelManager>().As<IPersonelService>().SingleInstance();
             builder.RegisterType<EfPersonelDal>().As<IPersonelDal>().SingleInstance();
 

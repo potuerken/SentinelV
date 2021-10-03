@@ -1,11 +1,8 @@
-﻿using Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Check.Concrete;
 
-namespace Entities.DTO
+namespace Check.DTO
 {
-    public class UserForRegisterDto : IDto
+    public class KullaniciKayitDTO : IDto
     {
         public string Email { get; set; }
         public string Password { get; set; }

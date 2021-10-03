@@ -1541,6 +1541,7 @@
           "Autofac": "6.1.0",
           "Autofac.Extensions.DependencyInjection": "7.1.0",
           "Autofac.Extras.DynamicProxy": "6.0.0",
+          "Check": "1.0.0",
           "DataAccess": "1.0.0",
           "Entities": "1.0.0",
           "FluentValidation": "9.5.1",
@@ -1553,6 +1554,17 @@
         },
         "compile": {
           "Business.dll": {}
+        }
+      },
+      "Check/1.0.0": {
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "runtime": {
+          "Check.dll": {}
+        },
+        "compile": {
+          "Check.dll": {}
         }
       },
       "Core/1.0.0": {
@@ -4018,6 +4030,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Check/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

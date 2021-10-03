@@ -1691,6 +1691,7 @@
           "Autofac": "6.1.0",
           "Autofac.Extensions.DependencyInjection": "7.1.0",
           "Autofac.Extras.DynamicProxy": "6.0.0",
+          "Check": "1.0.0",
           "DataAccess": "1.0.0",
           "Entities": "1.0.0",
           "FluentValidation": "9.5.1",
@@ -1703,6 +1704,19 @@
         },
         "runtime": {
           "bin/placeholder/Business.dll": {}
+        }
+      },
+      "Check/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Check.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Check.dll": {}
         }
       },
       "Core/1.0.0": {
@@ -6226,6 +6240,11 @@
       "type": "project",
       "path": "../Business/Business.csproj",
       "msbuildProject": "../Business/Business.csproj"
+    },
+    "Check/1.0.0": {
+      "type": "project",
+      "path": "../Check/Check.csproj",
+      "msbuildProject": "../Check/Check.csproj"
     },
     "Core/1.0.0": {
       "type": "project",

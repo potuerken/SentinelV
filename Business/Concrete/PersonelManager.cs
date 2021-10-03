@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
 using Business.Abstract;
+using Check.DTO;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
-using Entities.DTO;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {
