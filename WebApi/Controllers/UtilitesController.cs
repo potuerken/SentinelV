@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Check.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,17 @@ namespace WebApi.Controllers
                 return Ok(kodList.Data);
             }
             return BadRequest(kodList.Message);
+        }
+
+        [HttpPost("kodadded")]
+        public IActionResult KodAdded(KodDTO dto)
+        {
+            var kodAdded = _utilitesService.KodAdded(dto);
+            if (kodAdded.Success)
+            {
+                return Ok(kodAdded);
+            }
+            return BadRequest(kodAdded.Message);
         }
     }
 }

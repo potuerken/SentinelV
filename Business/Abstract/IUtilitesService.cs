@@ -10,5 +10,7 @@ namespace Business.Abstract
     {
         IDataResult<List<KodDTO>> GetKodList(short kodTipId);
 
+        IResult KodAdded(KodDTO dto);
+
     }
 }

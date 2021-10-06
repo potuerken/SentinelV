@@ -3,6 +3,7 @@ using Business.Abstract;
 using Check.DTO;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,5 +28,21 @@ namespace Business.Concrete
             var dtoResult = _mapper.Map<List<KodDTO>>(result);
             return new DataResult<List<KodDTO>>(dtoResult, true);
         }
+
+
+        public IResult KodAdded(KodDTO dto)
+        {
+            var dtoRequest = _mapper.Map<Kod>(dto);
+            int ess = _utilitesDal.Add(dtoRequest);
+            if (ess>0)
+            {
+                return new SuccessResult(dto.UstKodId.ToString() +" ekleme işlemi başarılı");
+            }
+            else
+            {
+                return new ErrorResult("ekleme işlemi başarısız");
+            }
+        }
+
     }
 }
