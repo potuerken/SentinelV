@@ -27,7 +27,7 @@ namespace Business.Concrete
         [TransactionScopeAspect]
         public IDataResult<List<PersonelDTO>> GetPersonelList()
         {
-            var res = _personelDal.GetList(a => a.AktifMi, "FK_Personel_CinsiyetKod, FK_Personel_RubetKod, FK_Personel_SubeKod");
+            var res = _personelDal.GetList(a => a.AktifMi, "CinsiyetKod,RutbeKod,SubeKod");
             List<PersonelDTO> listPersonel = _mapper.Map<List<PersonelDTO>>(res);
             return new SuccessDataResult<List<PersonelDTO>>(listPersonel);
         }
@@ -40,6 +40,7 @@ namespace Business.Concrete
             dtoRequest.AktifMi = true;
             dtoRequest.SonKaydedenKullaniciId = null;
             dtoRequest.IlkKayitTarihi = DateTime.Now;
+            dtoRequest.IlkKaydedenKullaniciId = dto.IKKId;
             int ess = _personelDal.Add(dtoRequest);
             if (ess > 0)
             {

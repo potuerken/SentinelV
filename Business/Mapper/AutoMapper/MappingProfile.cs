@@ -8,7 +8,9 @@ namespace Business.Mapper.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<Personel, PersonelDTO>();
+            CreateMap<Personel, PersonelDTO>()
+                .ForMember(a => a.CocukDurum, o => o.MapFrom(s => s.CocukDurumu == true ? "Var" : "Yok"))
+                .ForMember(a => a.NobetDurumu, o => o.MapFrom(s => s.NobetTutabilirMi == true ? "Tutabilir" : "Tutamaz"));
             CreateMap<PersonelDTO, Personel>();
 
             CreateMap<Kod, KodDTO>();

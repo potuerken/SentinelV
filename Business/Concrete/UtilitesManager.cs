@@ -25,7 +25,7 @@ namespace Business.Concrete
 
         public IDataResult<List<KodDTO>> GetKodList(short kodTipId)
         {
-            var result = _utilitesDal.Get(a => a.AktifMi && a.UstKodId == kodTipId);
+            var result = _utilitesDal.GetList(a => a.AktifMi && a.UstKodId == kodTipId);
             var dtoResult = _mapper.Map<List<KodDTO>>(result);
             return new DataResult<List<KodDTO>>(dtoResult, true);
         }
@@ -34,6 +34,9 @@ namespace Business.Concrete
         public IResult KodAdded(KodDTO dto)
         {
             var dtoRequest = _mapper.Map<Kod>(dto);
+            dtoRequest.IlkKayitTarihi = DateTime.Now;
+            dtoRequest.IlkKaydedenKullaniciId = dto.IKKId;
+            dtoRequest.AktifMi = true;
             int ess = _utilitesDal.Add(dtoRequest);
             if (ess>0)
             {

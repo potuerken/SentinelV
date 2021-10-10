@@ -14,6 +14,5 @@ C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Busin
 C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.AssemblyInfoInputs.cache
 C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.AssemblyInfo.cs
 C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.csproj.CoreCompileInputs.cache
-C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.csproj.CopyComplete
 C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.dll
 C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.pdb
