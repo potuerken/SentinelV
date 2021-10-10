@@ -1,14 +1,12 @@
-﻿using Core.Entities.Concrete;
-using System;
+﻿using Entities.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Abstract
 {
     public interface IUserService
     {
-        List<OperationClaim> GetClaims(User user);
-        void Add(User user);
-        User GetByMail(string email);
+        List<OperationClaims> GetClaims(Users user);
+        void Add(Users user);
+        Users GetByMail(string email);
     }
 }

@@ -1,8 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Entities.Models;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Business.ValidationRules.FluentValidation
 {
@@ -23,6 +20,8 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(a => a.SubeKodId).NotEmpty().NotNull().WithMessage("Şube Boş Olamaz");
             RuleFor(a => a.CepNo).NotEmpty().NotNull().WithMessage("CepNo Boş Olamaz");
             RuleFor(a => a.CepNo).Length(10).WithMessage("CepNo 10 Haneli Olmalı");
+            RuleFor(a => a.YakinCepNo).NotEmpty().NotNull().WithMessage("Yakın CepNo Boş Olamaz");
+            RuleFor(a => a.YakinCepNo).Length(10).WithMessage("Yakın CepNo 10 Haneli Olmalı");
             RuleFor(a => a.Dahili).NotEmpty().NotNull().WithMessage("Dahili Boş Olamaz");
             RuleFor(a => a.Dahili).Length(5).WithMessage("Dahili 5 Haneli Olmalı");
             RuleFor(a => a.BirimBaslamaTarihi).NotEmpty().NotNull().WithMessage("Birim Başlama Tarihi Boş Olamaz.");

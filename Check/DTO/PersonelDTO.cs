@@ -4,18 +4,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Check.DTO
 {
-    public class PersonelDTO : BaseEntity, IDto
+    public class PersonelDTO : IDto
     {
+        public int Id { get; set; }
         public PersonelDTO()
         {
             CinsiyetKod = new KodDTO();
             RutbeKod = new KodDTO();
             SubeKod = new KodDTO();
         }
-        [Display(Name = "Sicili")]
+        [Display(Name = "Sicil")]
         public string Sicil { get; set; }
 
-        [Display(Name = "TCKN")]
+        [Display(Name = "TC Kimlik No")]
         public string Tckn { get; set; }
 
         [Display(Name = "Ad")]
@@ -24,18 +25,17 @@ namespace Check.DTO
         [Display(Name = "Soyad")]
         public string Soyad { get; set; }
 
-        [Display(Name = "Cinsiyeti")]
+        [Display(Name = "Cinsiyet")]
         public KodDTO CinsiyetKod { get; set; }
 
-        [Display(Name = "Rütbesi")]
+        [Display(Name = "Rütbe")]
         public KodDTO RutbeKod { get; set; }
 
-        [Display(Name = "Şubesi")]
+        [Display(Name = "Şube")]
         public KodDTO SubeKod { get; set; }
 
         [Display(Name = "Nöbet Tutabilir Mi")]
         public bool NobetTutabilirMi { get; set; }
-
         public string NobetDurumu { get; set; }
 
         [Display(Name = "Çocuk Durumu")]
@@ -45,10 +45,16 @@ namespace Check.DTO
         [Display(Name = "Cep Telefonu")]
         public string CepNo { get; set; }
 
+        [Display(Name = "Yakın Cep Telefonu")]
+        public string YakinCepNo { get; set; }
+
         [Display(Name = "Dahili Telefonu")]
         public string Dahili { get; set; }
 
         [Display(Name = "Birimde Başlama Tarihi")]
         public DateTime BirimBaslamaTarihi { get; set; }
+        public int IKKId { get; set; }
+        public int SKKId { get; set; }
+
     }
 }

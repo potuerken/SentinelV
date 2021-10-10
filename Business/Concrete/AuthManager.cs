@@ -1,9 +1,9 @@
 ﻿using Business.Abstract;
 using Check.DTO;
-using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.JWT;
+using Entities.Models;
 
 namespace Business.Concrete
 {
@@ -18,11 +18,11 @@ namespace Business.Concrete
             _tokenHelper = tokenHelper;
         }
 
-        public IDataResult<User> Register(KullaniciKayitDTO userForRegisterDto, string password)
+        public IDataResult<Users> Register(KullaniciKayitDTO userForRegisterDto, string password)
         {
             byte[] passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
-            var user = new User
+            var user = new Users
             {
                 Email = userForRegisterDto.Email,
                 FirstName = userForRegisterDto.FirstName,
@@ -32,23 +32,23 @@ namespace Business.Concrete
                 AktifMi = true
             };
             _userService.Add(user);
-            return new SuccessDataResult<User>(user, "Kayıt oldu");
+            return new SuccessDataResult<Users>(user, "Kayıt oldu");
         }
 
-        public IDataResult<User> Login(KullaniciGirisDTO userForLoginDto)
+        public IDataResult<Users> Login(KullaniciGirisDTO userForLoginDto)
         {
             var userToCheck = _userService.GetByMail(userForLoginDto.Email);
             if (userToCheck == null)
             {
-                return new ErrorDataResult<User>("Kullanıcı bulunamadı");
+                return new ErrorDataResult<Users>("Kullanıcı bulunamadı");
             }
 
             if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
             {
-                return new ErrorDataResult<User>("Parola hatası");
+                return new ErrorDataResult<Users>("Parola hatası");
             }
 
-            return new SuccessDataResult<User>(userToCheck, "Başarılı giriş");
+            return new SuccessDataResult<Users>(userToCheck, "Başarılı giriş");
         }
 
         public IResult UserExists(string email)
@@ -60,7 +60,7 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        public IDataResult<AccessToken> CreateAccessToken(User user)
+        public IDataResult<AccessToken> CreateAccessToken(Users user)
         {
             var claims = _userService.GetClaims(user);
             var accessToken = _tokenHelper.CreateToken(user, claims);

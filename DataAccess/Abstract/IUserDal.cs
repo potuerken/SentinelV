@@ -1,15 +1,13 @@
 ﻿using Core.DataAccess;
-using Core.Entities.Concrete;
-using System;
+using Entities.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IUserDal : IEntityRepository<User>
+    public interface IUserDal : IEntityRepository<Users>
     {
-        List<OperationClaim> GetClaims(User user);
-        List<OperationClaim> GetAllClaims();
+        List<OperationClaims> GetClaims(Users user);
+        List<OperationClaims> GetAllClaims();
         bool AddUserClaim(int userid, int claimId);
         bool RemoveUserClaim(int userClaimId);
     }

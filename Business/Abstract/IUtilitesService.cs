@@ -12,5 +12,8 @@ namespace Business.Abstract
 
         IResult KodAdded(KodDTO dto);
 
+        IResult KodUpdated(KodDTO dto);
+
+        IResult KodDeleted(KodDTO dto);
     }
 }

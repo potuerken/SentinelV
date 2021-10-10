@@ -39,10 +39,26 @@ namespace WebApi.Controllers
         {
             var kodAdded = _utilitesService.KodAdded(dto);
             if (kodAdded.Success)
-            {
                 return Ok(kodAdded);
-            }
             return BadRequest(kodAdded.Message);
+        }
+
+        [HttpPut("kodupdated")]
+        public IActionResult KodUpdated(KodDTO dto)
+        {
+            var kodAdded = _utilitesService.KodUpdated(dto);
+            if (kodAdded.Success)
+                return Ok(kodAdded);
+            return BadRequest(kodAdded.Message);
+        }
+
+        [HttpPut("koddeleted")]
+        public IActionResult KodDeleted(KodDTO dto)
+        {
+            var kodDeleted = _utilitesService.KodDeleted(dto);
+            if (kodDeleted.Success)
+                return Ok(kodDeleted);
+            return BadRequest(kodDeleted.Message);
         }
     }
 }

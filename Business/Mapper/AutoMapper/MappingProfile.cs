@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Check.DTO;
-using Entities.Concrete;
+using Entities.Models;
 
 namespace Business.Mapper.AutoMapper
 {
@@ -10,6 +10,7 @@ namespace Business.Mapper.AutoMapper
         {
             CreateMap<Personel, PersonelDTO>();
             CreateMap<PersonelDTO, Personel>();
+
             CreateMap<Kod, KodDTO>();
             CreateMap<KodDTO, Kod>();
         }

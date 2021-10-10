@@ -1,15 +1,15 @@
 ﻿using Check.DTO;
-using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using Core.Utilities.Security.JWT;
+using Entities.Models;
 
 namespace Business.Abstract
 {
     public interface IAuthService
     {
-        IDataResult<User> Register(KullaniciKayitDTO userForRegisterDto, string password);
-        IDataResult<User> Login(KullaniciGirisDTO userForLoginDto);
+        IDataResult<Users> Register(KullaniciKayitDTO userForRegisterDto, string password);
+        IDataResult<Users> Login(KullaniciGirisDTO userForLoginDto);
         IResult UserExists(string email);
-        IDataResult<AccessToken> CreateAccessToken(User user);
+        IDataResult<AccessToken> CreateAccessToken(Users user);
     }
 }

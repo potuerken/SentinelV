@@ -37,7 +37,7 @@ namespace WebApi
         {
             services.AddControllers();
 
-            #region AutoMapper Ayarlarý
+            #region AutoMapper Ayarlari
             var mappingConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new MappingProfile());

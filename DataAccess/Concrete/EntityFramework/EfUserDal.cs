@@ -1,17 +1,14 @@
 ﻿using Core.DataAccess.EntityFramework;
-using Core.Entities.Concrete;
 using DataAccess.Abstract;
-using System;
+using Entities.Models;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using DataAccess.Connection;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfUserDal : EntityFrameworkRepositoryBase<User, SentinelContext>, IUserDal
+    public class EfUserDal : EntityFrameworkRepositoryBase<Users, SentinelContext>, IUserDal
     {
-        public List<OperationClaim> GetClaims(User user)
+        public List<OperationClaims> GetClaims(Users user)
         {
             using (var context = new SentinelContext())
             {
@@ -19,14 +16,14 @@ namespace DataAccess.Concrete.EntityFramework
                              join userOperationClaim in context.UserOperationClaims
                                  on operationClaim.Id equals userOperationClaim.OperationClaimId
                              where userOperationClaim.UserId == user.Id
-                             select new OperationClaim { Id = operationClaim.Id, Name = operationClaim.Name };
+                             select new OperationClaims { Id = operationClaim.Id, Name = operationClaim.Name };
                 return result.ToList();
 
             }
         }
 
 
-        public List<OperationClaim> GetAllClaims()
+        public List<OperationClaims> GetAllClaims()
         {
             using (var db = new SentinelContext())
             {
@@ -39,7 +36,7 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (var db = new SentinelContext())
             {
-                db.UserOperationClaims.Add(new UserOperationClaim
+                db.UserOperationClaims.Add(new UserOperationClaims
                 {
                     UserId = userid,
                     OperationClaimId = claimId

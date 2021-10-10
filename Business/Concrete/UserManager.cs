@@ -1,9 +1,7 @@
 ﻿using Business.Abstract;
-using Core.Entities.Concrete;
 using DataAccess.Abstract;
-using System;
+using Entities.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {
@@ -16,17 +14,17 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
-        public List<OperationClaim> GetClaims(User user)
+        public List<OperationClaims> GetClaims(Users user)
         {
             return _userDal.GetClaims(user);
         }
 
-        public void Add(User user)
+        public void Add(Users user)
         {
             _userDal.Add(user);
         }
 
-        public User GetByMail(string email)
+        public Users GetByMail(string email)
         {
             return _userDal.Get(u => u.Email == email);
         }
