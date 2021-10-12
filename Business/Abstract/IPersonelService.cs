@@ -13,6 +13,5 @@ namespace Business.Abstract
 
         IResult PersonelUpdated(PersonelDTO dto);
 
-        IResult PersonelDeleted(PersonelDTO dto);
     }
 }

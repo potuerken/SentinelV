@@ -34,8 +34,8 @@ namespace Business.Concrete
         public IResult KodAdded(KodDTO dto)
         {
             var dtoRequest = _mapper.Map<Kod>(dto);
-            dtoRequest.IlkKayitTarihi = DateTime.Now;
-            dtoRequest.IlkKaydedenKullaniciId = dto.IKKId;
+            //dtoRequest.IlkKayitTarihi = DateTime.Now;
+            dtoRequest.IlkKaydedenKullaniciId = dto.IlkKaydedenKullaniciId;
             dtoRequest.AktifMi = true;
             int ess = _utilitesDal.Add(dtoRequest);
             if (ess>0)
@@ -52,7 +52,7 @@ namespace Business.Concrete
         {
             var dbKod = _utilitesDal.Get(a => a.Id == dto.Id);
             dbKod.Ad = dto.Ad;
-            dbKod.SonKaydedenKullaniciId = dto.SKKId;
+            dbKod.SonKaydedenKullaniciId = dto.SonKaydedenKullaniciId;
             dbKod.SonKayitTarihi = DateTime.Now;
             int ess = _utilitesDal.Update(dbKod);
             if (ess > 0)
@@ -75,7 +75,7 @@ namespace Business.Concrete
             }
             var dbKod = _utilitesDal.Get(a => a.Id == dto.Id);
             dbKod.AktifMi =false;
-            dbKod.SonKaydedenKullaniciId = dto.SKKId;
+            dbKod.SonKaydedenKullaniciId = dto.SonKaydedenKullaniciId;
             dbKod.SonKayitTarihi = DateTime.Now;
             int ess = _utilitesDal.Update(dbKod);
             if (ess > 0)

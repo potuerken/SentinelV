@@ -1,3 +1,8 @@
+C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.csproj.AssemblyReference.cache
+C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.AssemblyInfoInputs.cache
+C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.AssemblyInfo.cs
+C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.csproj.CoreCompileInputs.cache
 C:\Users\tuna4lua\source\repos\SentinelV\Business\bin\Debug\netstandard2.0\Business.deps.json
 C:\Users\tuna4lua\source\repos\SentinelV\Business\bin\Debug\netstandard2.0\Business.dll
 C:\Users\tuna4lua\source\repos\SentinelV\Business\bin\Debug\netstandard2.0\Business.pdb
@@ -9,10 +14,6 @@ C:\Users\tuna4lua\source\repos\SentinelV\Business\bin\Debug\netstandard2.0\Check
 C:\Users\tuna4lua\source\repos\SentinelV\Business\bin\Debug\netstandard2.0\DataAccess.pdb
 C:\Users\tuna4lua\source\repos\SentinelV\Business\bin\Debug\netstandard2.0\Entities.pdb
 C:\Users\tuna4lua\source\repos\SentinelV\Business\bin\Debug\netstandard2.0\Core.pdb
-C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.csproj.AssemblyReference.cache
-C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.AssemblyInfoInputs.cache
-C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.AssemblyInfo.cs
-C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.csproj.CopyComplete
 C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.dll
 C:\Users\tuna4lua\source\repos\SentinelV\Business\obj\Debug\netstandard2.0\Business.pdb

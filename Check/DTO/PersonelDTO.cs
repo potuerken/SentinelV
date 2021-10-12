@@ -6,13 +6,15 @@ namespace Check.DTO
 {
     public class PersonelDTO : IDto
     {
-        public int Id { get; set; }
         public PersonelDTO()
         {
             CinsiyetKod = new KodDTO();
             RutbeKod = new KodDTO();
             SubeKod = new KodDTO();
         }
+
+        public int Id { get; set; }
+        
         [Display(Name = "Sicil")]
         public string Sicil { get; set; }
 
@@ -53,8 +55,12 @@ namespace Check.DTO
 
         [Display(Name = "Birimde Başlama Tarihi")]
         public DateTime BirimBaslamaTarihi { get; set; }
-        public int IKKId { get; set; }
-        public int SKKId { get; set; }
+        public DateTime IlkKayitTarihi { get; set; }
+        public DateTime? SonKayitTarihi { get; set; }
+
+        public int IlkKaydedenKullaniciId { get; set; }
+        public int? SonKaydedenKullaniciId { get; set; }
+        public bool AktifMi { get; set; }
 
     }
 }

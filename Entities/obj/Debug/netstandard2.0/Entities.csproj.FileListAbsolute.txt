@@ -7,4 +7,3 @@ C:\Users\tuna4lua\source\repos\SentinelV\Entities\obj\Debug\netstandard2.0\Entit
 C:\Users\tuna4lua\source\repos\SentinelV\Entities\obj\Debug\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
 C:\Users\tuna4lua\source\repos\SentinelV\Entities\obj\Debug\netstandard2.0\Entities.dll
 C:\Users\tuna4lua\source\repos\SentinelV\Entities\obj\Debug\netstandard2.0\Entities.pdb
-C:\Users\tuna4lua\source\repos\SentinelV\Entities\obj\Debug\netstandard2.0\Entities.csproj.AssemblyReference.cache

@@ -95,7 +95,7 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
+        public IList<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
         {
             using (var db = new TContext())
             {
@@ -106,7 +106,50 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, string includedProperties)
+        public IQueryable<TEntity> Include(string[] includes)
+        {
+            using (var db = new TContext())
+            {
+                var result = db.Set<TEntity>().AsQueryable();
+                if (includes.Length > 0)
+                {
+                    foreach (var item in includes)
+                    {
+                        result.Include(item);
+                    }
+                }
+                return result;
+            }
+        }
+
+        //public static IQueryable<T> IncludeMultiple<T>(IQueryable<T> query, params Expression<Func<T, object>>[] includes)
+        //{
+        //    if (includes != null)
+        //    {
+        //        query = includes.Aggregate(query,
+        //                  (current, include) => current.Include(include));
+        //    }
+
+        //    return query;
+        //}
+
+        //public IEnumerable<TEntity> Include(params Expression<Func<TEntity, object>>[] includes)
+        //{
+        //    using (var db = new TContext())
+        //    {
+        //        var dbSet = db.Set<TEntity>();
+
+        //        IEnumerable<TEntity> query = null;
+        //        foreach (var include in includes)
+        //        {
+        //            query = dbSet.Include(include);
+        //        }
+
+        //        return query ?? dbSet;
+        //    }
+        //}
+
+        public IList<TEntity> GetList(Expression<Func<TEntity, bool>> filter, string includedProperties)
         {
             using (var db = new TContext())
             {
@@ -125,7 +168,9 @@ namespace Core.DataAccess.EntityFramework
         {
             using (var db = new TContext())
             {
+                entity.GetType().GetProperty("IlkKayitTarihi").SetValue(entity, DateTime.Now);
                 db.Entry(entity).State = EntityState.Added;
+                
                 return db.SaveChanges();
             }
         }
@@ -137,7 +182,9 @@ namespace Core.DataAccess.EntityFramework
                 db.Entry(entity).State = EntityState.Modified;
                 return db.SaveChanges();
             }
-        } 
+        }
+
+
         #endregion
     }
 }

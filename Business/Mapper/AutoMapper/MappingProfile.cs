@@ -11,10 +11,21 @@ namespace Business.Mapper.AutoMapper
             CreateMap<Personel, PersonelDTO>()
                 .ForMember(a => a.CocukDurum, o => o.MapFrom(s => s.CocukDurumu == true ? "Var" : "Yok"))
                 .ForMember(a => a.NobetDurumu, o => o.MapFrom(s => s.NobetTutabilirMi == true ? "Tutabilir" : "Tutamaz"));
-            CreateMap<PersonelDTO, Personel>();
+            CreateMap<PersonelDTO, Personel>()
+                .ForMember(a => a.IlkKayitTarihi, o => o.MapFrom(s => s.IlkKayitTarihi))
+                .ForMember(a => a.IlkKaydedenKullaniciId, o => o.MapFrom(s => s.IlkKaydedenKullaniciId));
 
             CreateMap<Kod, KodDTO>();
             CreateMap<KodDTO, Kod>();
+
+            CreateMap<NobetSistemSabitNobetciIliskiDTO, NobetSistemSabitNobetciIliski>();
+            CreateMap<NobetSistemSabitNobetciIliski, NobetSistemSabitNobetciIliskiDTO>();
+
+            CreateMap<NobetSistemDTO, NobetSistem>();
+            CreateMap<NobetSistem, NobetSistemDTO>();
+
+            CreateMap<NobetSistemRutbeIliskiDTO, NobetSistemRutbeIliski>();
+            CreateMap<NobetSistemRutbeIliski, NobetSistemRutbeIliskiDTO>();
         }
     }
 }

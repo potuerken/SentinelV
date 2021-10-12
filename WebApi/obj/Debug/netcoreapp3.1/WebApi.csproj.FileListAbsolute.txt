@@ -1,3 +1,9 @@
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.AssemblyReference.cache
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfoInputs.cache
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfo.cs
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CoreCompileInputs.cache
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\WebApi.exe
@@ -11,6 +17,8 @@ C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Autofac.
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Autofac.Extras.DynamicProxy.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\EntityFramework.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\FluentValidation.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\log4net.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -40,8 +48,10 @@ C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Microsof
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\System.CodeDom.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
@@ -51,6 +61,8 @@ C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\runtimes
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
@@ -64,12 +76,6 @@ C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Check.pd
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Core.pdb
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\DataAccess.pdb
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\bin\Debug\netcoreapp3.1\Entities.pdb
-C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.AssemblyReference.cache
-C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfoInputs.cache
-C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfo.cs
-C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CoreCompileInputs.cache
-C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\staticwebassets\WebApi.StaticWebAssets.Manifest.cache
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\staticwebassets\WebApi.StaticWebAssets.xml
 C:\Users\tuna4lua\source\repos\SentinelV\WebApi\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebApi.styles.css

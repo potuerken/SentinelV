@@ -19,9 +19,12 @@ namespace Core.DataAccess
 
         T Get(Expression<Func<T, bool>> filter);
         T Get(Expression<Func<T, bool>> filter, string includedProperties);
-        List<T> GetList(Expression<Func<T, bool>> filter = null);
-        List<T> GetList(Expression<Func<T, bool>> filter, string includedProperties);
+        IList<T> GetList(Expression<Func<T, bool>> filter = null);
+        IList<T> GetList(Expression<Func<T, bool>> filter, string includedProperties);
         int Add(T entity);
         int Update(T entity);
+        IQueryable<T> Include(string[] includes);
+        //IEnumerable<T> Include(params Expression<Func<T, object>>[] includes);
+        //IQueryable<T> IncludeMultiple<T>(IQueryable<T> query, params Expression<Func<T, object>>[] includes);
     }
 }

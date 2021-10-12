@@ -19,6 +19,9 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<NobetSistemManager>().As<INobetSistemService>().SingleInstance();
+            builder.RegisterType<EfNobetSistemDal>().As<INobetSistemiDal>().SingleInstance();
+
             builder.RegisterType<UtilitesManager>().As<IUtilitesService>().SingleInstance();
             builder.RegisterType<EfUtilitesDal>().As<IUtilitesDal>().SingleInstance();
 

@@ -40,7 +40,7 @@ namespace Business.Concrete
             dtoRequest.AktifMi = true;
             dtoRequest.SonKaydedenKullaniciId = null;
             dtoRequest.IlkKayitTarihi = DateTime.Now;
-            dtoRequest.IlkKaydedenKullaniciId = dto.IKKId;
+            dtoRequest.IlkKaydedenKullaniciId = dto.IlkKaydedenKullaniciId;
             int ess = _personelDal.Add(dtoRequest);
             if (ess > 0)
             {
@@ -56,7 +56,7 @@ namespace Business.Concrete
         public IResult PersonelUpdated(PersonelDTO dto)
         {
             Personel dtoRequest = _mapper.Map<Personel>(dto);
-            dtoRequest.SonKaydedenKullaniciId = dto.SKKId;
+            dtoRequest.SonKaydedenKullaniciId = dto.SonKaydedenKullaniciId;
             dtoRequest.SonKayitTarihi = DateTime.Now;
             int ess = _personelDal.Update(dtoRequest);
             if (ess > 0)
@@ -81,7 +81,7 @@ namespace Business.Concrete
             //}
             var dbKod = _personelDal.Get(a => a.Id == dto.Id);
             dbKod.AktifMi = false;
-            dbKod.SonKaydedenKullaniciId = dto.SKKId;
+            dbKod.SonKaydedenKullaniciId = dto.SonKaydedenKullaniciId;
             dbKod.SonKayitTarihi = DateTime.Now;
             int ess = _personelDal.Update(dbKod);
             if (ess > 0)

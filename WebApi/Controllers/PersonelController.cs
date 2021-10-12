@@ -35,7 +35,7 @@ namespace WebApi.Controllers
 
 
         [HttpPost("personeladded")]
-        public IActionResult KodAdded(PersonelDTO dto)
+        public IActionResult PersonelAdded(PersonelDTO dto)
         {
             var personelAdded = _personelService.PersonelAdded(dto);
             if (personelAdded.Success)
@@ -44,7 +44,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("personelupdated")]
-        public IActionResult KodUpdated(PersonelDTO dto)
+        public IActionResult PersonelUpdated(PersonelDTO dto)
         {
             var personelUpdate = _personelService.PersonelUpdated(dto);
             if (personelUpdate.Success)
@@ -52,13 +52,5 @@ namespace WebApi.Controllers
             return BadRequest(personelUpdate.Message);
         }
 
-        [HttpPut("personeldeleted")]
-        public IActionResult KodDeleted(PersonelDTO dto)
-        {
-            var personelDeleted = _personelService.PersonelDeleted(dto);
-            if (personelDeleted.Success)
-                return Ok(personelDeleted);
-            return BadRequest(personelDeleted.Message);
-        }
     }
 }

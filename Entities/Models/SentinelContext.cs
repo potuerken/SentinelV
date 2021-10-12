@@ -22,6 +22,10 @@ namespace Entities.Models
         public virtual DbSet<HardKod> HardKod { get; set; }
         public virtual DbSet<Kod> Kod { get; set; }
         public virtual DbSet<KodTip> KodTip { get; set; }
+        public virtual DbSet<NobetSistem> NobetSistem { get; set; }
+        public virtual DbSet<NobetSistemRutbeIliski> NobetSistemRutbeIliski { get; set; }
+        public virtual DbSet<NobetSistemSabitNobetciIliski> NobetSistemSabitNobetciIliski { get; set; }
+        public virtual DbSet<NobetSistemSubeIliski> NobetSistemSubeIliski { get; set; }
         public virtual DbSet<OperationClaims> OperationClaims { get; set; }
         public virtual DbSet<Personel> Personel { get; set; }
         public virtual DbSet<UserOperationClaims> UserOperationClaims { get; set; }
@@ -96,6 +100,74 @@ namespace Entities.Models
                     .WithMany(p => p.InverseUstKod)
                     .HasForeignKey(d => d.UstKodId)
                     .HasConstraintName("FK_KodTipUstKodId_KodTipId");
+            });
+
+            modelBuilder.Entity<NobetSistem>(entity =>
+            {
+                entity.Property(e => e.Ad)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.IlkKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<NobetSistemRutbeIliski>(entity =>
+            {
+                entity.Property(e => e.IlkKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
+
+                entity.HasOne(d => d.NobetSistem)
+                    .WithMany(p => p.NobetSistemRutbeIliski)
+                    .HasForeignKey(d => d.NobetSistemId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetSistemRutbeIliski_NobetSistem");
+
+                entity.HasOne(d => d.RutbeKod)
+                    .WithMany(p => p.NobetSistemRutbeIliski)
+                    .HasForeignKey(d => d.RutbeKodId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetSistemRutbeIliski_RutbeKod");
+            });
+
+            modelBuilder.Entity<NobetSistemSabitNobetciIliski>(entity =>
+            {
+                entity.Property(e => e.IlkKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
+
+                entity.HasOne(d => d.NobetSistem)
+                    .WithMany(p => p.NobetSistemSabitNobetciIliski)
+                    .HasForeignKey(d => d.NobetSistemId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetSistemSabitNobetciIliski_NobetSistem");
+
+                entity.HasOne(d => d.SabitPersonel)
+                    .WithMany(p => p.NobetSistemSabitNobetciIliski)
+                    .HasForeignKey(d => d.SabitPersonelId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetSistemSabitNobetciIliski_SabitPersonel");
+            });
+
+            modelBuilder.Entity<NobetSistemSubeIliski>(entity =>
+            {
+                entity.Property(e => e.IlkKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
+
+                entity.HasOne(d => d.NobetSistem)
+                    .WithMany(p => p.NobetSistemSubeIliski)
+                    .HasForeignKey(d => d.NobetSistemId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetSistemSubeIliski_NobetSistem");
+
+                entity.HasOne(d => d.SubeKod)
+                    .WithMany(p => p.NobetSistemSubeIliski)
+                    .HasForeignKey(d => d.SubeKodId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetSistemSubeIliski_SubeKod");
             });
 
             modelBuilder.Entity<OperationClaims>(entity =>

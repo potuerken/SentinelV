@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "I/LP5sL1l+JHIpO5bDUMrCZM4UPfjvJvuKXF7TP7WXDUbWZ7Y3imiw4wC7wHQqRSrLCJtb0kI9ReRPcPCZkfXQ==",
+  "dgSpecHash": "qZvp7fcSFylYdsKeylmGhdTK+vEM/4xODDcWbzEtU+gWCk5xQrHwvv/WAiRh18eIjT0kizJN2NyFBERJkUXa1A==",
   "success": true,
   "projectFilePath": "C:\\Users\\tuna4lua\\source\\repos\\SentinelV\\Core\\Core.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\tuna4lua\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
     "C:\\Users\\tuna4lua\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.0\\autofac.extras.dynamicproxy.6.0.0.nupkg.sha512",
     "C:\\Users\\tuna4lua\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\tuna4lua\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\tuna4lua\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
     "C:\\Users\\tuna4lua\\.nuget\\packages\\log4net\\2.0.12\\log4net.2.0.12.nupkg.sha512",
     "C:\\Users\\tuna4lua\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
