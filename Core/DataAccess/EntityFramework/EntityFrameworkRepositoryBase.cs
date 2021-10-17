@@ -164,14 +164,17 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        public int Add(TEntity entity)
+        public Dictionary<int, TEntity> Add(TEntity entity)
         {
             using (var db = new TContext())
             {
                 entity.GetType().GetProperty("IlkKayitTarihi").SetValue(entity, DateTime.Now);
                 db.Entry(entity).State = EntityState.Added;
-                
-                return db.SaveChanges();
+
+                int eSS = db.SaveChanges();
+                Dictionary<int, TEntity> res = new Dictionary<int, TEntity>();
+                res.Add(eSS, entity);
+                return res;
             }
         }
 

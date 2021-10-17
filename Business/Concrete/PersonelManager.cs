@@ -8,7 +8,9 @@ using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Models;
 using System;
+using System.Linq;
 using System.Collections.Generic;
+
 
 namespace Business.Concrete
 {
@@ -31,7 +33,7 @@ namespace Business.Concrete
             List<PersonelDTO> listPersonel = _mapper.Map<List<PersonelDTO>>(res);
             return new SuccessDataResult<List<PersonelDTO>>(listPersonel);
         }
-
+            
         [TransactionScopeAspect]
         [ValidationAspect(typeof(PersonelValidator), Priority = 1)]
         public IResult PersonelAdded(PersonelDTO dto)
@@ -41,8 +43,9 @@ namespace Business.Concrete
             dtoRequest.SonKaydedenKullaniciId = null;
             dtoRequest.IlkKayitTarihi = DateTime.Now;
             dtoRequest.IlkKaydedenKullaniciId = dto.IlkKaydedenKullaniciId;
-            int ess = _personelDal.Add(dtoRequest);
-            if (ess > 0)
+            var ess = _personelDal.Add(dtoRequest);
+            int resto = Convert.ToInt32(ess.Keys);
+            if (resto > 0)
             {
                 return new SuccessResult("PERSONEL EKLEME İŞLEMİ BAŞARILI");
             }

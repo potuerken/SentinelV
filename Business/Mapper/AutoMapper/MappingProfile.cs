@@ -21,11 +21,22 @@ namespace Business.Mapper.AutoMapper
             CreateMap<NobetSistemSabitNobetciIliskiDTO, NobetSistemSabitNobetciIliski>();
             CreateMap<NobetSistemSabitNobetciIliski, NobetSistemSabitNobetciIliskiDTO>();
 
-            CreateMap<NobetSistemDTO, NobetSistem>();
-            CreateMap<NobetSistem, NobetSistemDTO>();
+            CreateMap<NobetSistemDTO, NobetSistem>()
+                .ForMember(a=>a.NobetSistemSubeIliski, o=>o.MapFrom(s=>s.SubeIliskiListesi))
+                .ForMember(a=>a.NobetSistemRutbeIliski, o=>o.MapFrom(s=>s.RutbeIliskiListesi));
+
+            CreateMap<NobetSistem, NobetSistemDTO>()
+                .ForMember(a => a.SubeIliskiListesi, o => o.MapFrom(s => s.NobetSistemSubeIliski))
+                .ForMember(a => a.RutbeIliskiListesi, o => o.MapFrom(s => s.NobetSistemRutbeIliski))
+                .ForMember(a => a.SabitNobetciListesi, o => o.MapFrom(s => s.NobetSistemSabitNobetciIliski));
+
 
             CreateMap<NobetSistemRutbeIliskiDTO, NobetSistemRutbeIliski>();
             CreateMap<NobetSistemRutbeIliski, NobetSistemRutbeIliskiDTO>();
+
+            CreateMap<NobetSistemSubeIliskiDTO, NobetSistemSubeIliski>();
+            CreateMap<NobetSistemSubeIliski, NobetSistemSubeIliskiDTO>();
+                
         }
     }
 }

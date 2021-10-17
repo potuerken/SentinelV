@@ -35,7 +35,7 @@ namespace Entities.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=DESKTOP-KVJU9I3\\MSSQLSERVER01;Database=Sentinel; Trusted_Connection=true");
             }
         }
@@ -108,7 +108,25 @@ namespace Entities.Models
                     .IsRequired()
                     .HasMaxLength(50);
 
+                entity.Property(e => e.HaftaIciGeceSaat).HasMaxLength(11);
+
+                entity.Property(e => e.HaftaIciGunduzSaat)
+                    .IsRequired()
+                    .HasMaxLength(11);
+
+                entity.Property(e => e.HaftaSonuGeceSaat).HasMaxLength(11);
+
+                entity.Property(e => e.HaftaSonuGunduzSaat)
+                    .IsRequired()
+                    .HasMaxLength(11);
+
                 entity.Property(e => e.IlkKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.ResmiTatilGeceSaat).HasMaxLength(11);
+
+                entity.Property(e => e.ResmiTatilGunduzSaat)
+                    .IsRequired()
+                    .HasMaxLength(11);
 
                 entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
             });

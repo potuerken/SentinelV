@@ -22,6 +22,12 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<NobetSistemManager>().As<INobetSistemService>().SingleInstance();
             builder.RegisterType<EfNobetSistemDal>().As<INobetSistemiDal>().SingleInstance();
 
+            builder.RegisterType<EfNobetSistemSabitNobetciDal>().As<INobetSistemSabitNobetciDal>().SingleInstance();
+
+            builder.RegisterType<EfNobetSistemRutbeIliskiDal>().As<INobetSistemRutbeIliskiDal>().SingleInstance();
+
+            builder.RegisterType<EfNobetSistemSubeIliskiDal>().As<INobetSistemSubeIliskiDal>().SingleInstance();
+
             builder.RegisterType<UtilitesManager>().As<IUtilitesService>().SingleInstance();
             builder.RegisterType<EfUtilitesDal>().As<IUtilitesDal>().SingleInstance();
 

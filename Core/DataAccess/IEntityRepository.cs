@@ -21,7 +21,8 @@ namespace Core.DataAccess
         T Get(Expression<Func<T, bool>> filter, string includedProperties);
         IList<T> GetList(Expression<Func<T, bool>> filter = null);
         IList<T> GetList(Expression<Func<T, bool>> filter, string includedProperties);
-        int Add(T entity);
+        Dictionary<int, T> Add(T entity);
+        //T AddTurnRow(T entity);
         int Update(T entity);
         IQueryable<T> Include(string[] includes);
         //IEnumerable<T> Include(params Expression<Func<T, object>>[] includes);

@@ -1,7 +1,3 @@
-C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.AssemblyInfoInputs.cache
-C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.AssemblyInfo.cs
-C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.csproj.CoreCompileInputs.cache
 C:\Users\tuna4lua\source\repos\SentinelV\Check\bin\Debug\netstandard2.0\Check.deps.json
 C:\Users\tuna4lua\source\repos\SentinelV\Check\bin\Debug\netstandard2.0\Check.dll
 C:\Users\tuna4lua\source\repos\SentinelV\Check\bin\Debug\netstandard2.0\Check.pdb
@@ -9,6 +5,10 @@ C:\Users\tuna4lua\source\repos\SentinelV\Check\bin\Debug\netstandard2.0\Core.dll
 C:\Users\tuna4lua\source\repos\SentinelV\Check\bin\Debug\netstandard2.0\Entities.dll
 C:\Users\tuna4lua\source\repos\SentinelV\Check\bin\Debug\netstandard2.0\Core.pdb
 C:\Users\tuna4lua\source\repos\SentinelV\Check\bin\Debug\netstandard2.0\Entities.pdb
-C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.csproj.CopyComplete
+C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.AssemblyInfoInputs.cache
+C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.AssemblyInfo.cs
+C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.csproj.CoreCompileInputs.cache
 C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.dll
 C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.pdb
+C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.csproj.CopyComplete
