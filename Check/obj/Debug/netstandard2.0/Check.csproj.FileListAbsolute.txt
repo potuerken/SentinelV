@@ -9,6 +9,7 @@ C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.Ge
 C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.AssemblyInfoInputs.cache
 C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.AssemblyInfo.cs
 C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.csproj.CoreCompileInputs.cache
+C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.csproj.CopyComplete
 C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.dll
 C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.pdb
-C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.csproj.CopyComplete
+C:\Users\tuna4lua\source\repos\SentinelV\Check\obj\Debug\netstandard2.0\Check.csproj.AssemblyReference.cache

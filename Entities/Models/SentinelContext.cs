@@ -20,6 +20,7 @@ namespace Entities.Models
         }
 
         public virtual DbSet<HardKod> HardKod { get; set; }
+        public virtual DbSet<IzinMazeret> IzinMazeret { get; set; }
         public virtual DbSet<Kod> Kod { get; set; }
         public virtual DbSet<KodTip> KodTip { get; set; }
         public virtual DbSet<NobetSistem> NobetSistem { get; set; }
@@ -56,6 +57,29 @@ namespace Entities.Models
                     .WithMany(p => p.InverseUstKod)
                     .HasForeignKey(d => d.UstKodId)
                     .HasConstraintName("FK_HardKodUstKodId_HardKodId");
+            });
+
+            modelBuilder.Entity<IzinMazeret>(entity =>
+            {
+                entity.Property(e => e.BaslangicTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.BitisTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.IlkKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
+
+                entity.HasOne(d => d.IzinMazeretKod)
+                    .WithMany(p => p.IzinMazeret)
+                    .HasForeignKey(d => d.IzinMazeretKodId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_IzinMazeret_Kod");
+
+                entity.HasOne(d => d.Personel)
+                    .WithMany(p => p.IzinMazeret)
+                    .HasForeignKey(d => d.PersonelId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_IzinMazeret_Personel");
             });
 
             modelBuilder.Entity<Kod>(entity =>

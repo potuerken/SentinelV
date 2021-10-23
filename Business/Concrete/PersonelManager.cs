@@ -43,9 +43,8 @@ namespace Business.Concrete
             dtoRequest.SonKaydedenKullaniciId = null;
             dtoRequest.IlkKayitTarihi = DateTime.Now;
             dtoRequest.IlkKaydedenKullaniciId = dto.IlkKaydedenKullaniciId;
-            var ess = _personelDal.Add(dtoRequest);
-            int resto = Convert.ToInt32(ess.Keys);
-            if (resto > 0)
+            int ess = _personelDal.Add(dtoRequest).FirstOrDefault().Key;
+            if (ess > 0)
             {
                 return new SuccessResult("PERSONEL EKLEME İŞLEMİ BAŞARILI");
             }

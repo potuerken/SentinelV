@@ -17,10 +17,12 @@ namespace WebApi.Controllers
     public class PersonelController : ControllerBase
     {
         IPersonelService _personelService;
+        IIzinMazeretService _izinMazeretService;
 
-        public PersonelController(IPersonelService personelService)
+        public PersonelController(IPersonelService personelService, IIzinMazeretService izinMazeretService)
         {
             _personelService = personelService;
+            _izinMazeretService = izinMazeretService;
         }
 
         [HttpGet("getpersonel")]
@@ -53,6 +55,24 @@ namespace WebApi.Controllers
         }
 
 
+        [HttpGet("iziListesi")]
+        public IActionResult IzinListesi()
+        {
+            var izinListesi = _izinMazeretService.GetIzinList();
+            if (izinListesi.Success)
+                return Ok(izinListesi.Data);
 
+            return BadRequest(izinListesi.Message);
+        }
+
+        [HttpPost("izinAdded")]
+        public IActionResult IzinAdded(IzinMazeretDTO dto)
+        {
+            var izinListesi = _izinMazeretService.IzinAdded(dto);
+            if (izinListesi.Success)
+                return Ok(izinListesi);
+
+            return BadRequest(izinListesi.Message);
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace Entities.Models
     {
         public Personel()
         {
+            IzinMazeret = new HashSet<IzinMazeret>();
             NobetSistemSabitNobetciIliski = new HashSet<NobetSistemSabitNobetciIliski>();
         }
 
@@ -37,6 +38,7 @@ namespace Entities.Models
         public virtual Kod CinsiyetKod { get; set; }
         public virtual Kod RutbeKod { get; set; }
         public virtual Kod SubeKod { get; set; }
+        public virtual ICollection<IzinMazeret> IzinMazeret { get; set; }
         public virtual ICollection<NobetSistemSabitNobetciIliski> NobetSistemSabitNobetciIliski { get; set; }
     }
 }

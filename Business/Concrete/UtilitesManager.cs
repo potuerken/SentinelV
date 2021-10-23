@@ -6,6 +6,7 @@ using DataAccess.Abstract;
 using Entities.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Business.Concrete
 {
@@ -37,8 +38,7 @@ namespace Business.Concrete
             //dtoRequest.IlkKayitTarihi = DateTime.Now;
             dtoRequest.IlkKaydedenKullaniciId = dto.IlkKaydedenKullaniciId;
             dtoRequest.AktifMi = true;
-            var ess = _utilitesDal.Add(dtoRequest);
-            int resto = Convert.ToInt32(ess.Keys);
+            int resto = _utilitesDal.Add(dtoRequest).FirstOrDefault().Key;
             if (resto > 0)
             {
                 return new SuccessResult("Şube ekleme işlemi başarılı");

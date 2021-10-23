@@ -19,6 +19,9 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<IzinMazeretManager>().As<IIzinMazeretService>().SingleInstance();
+            builder.RegisterType<EfIzinMazeretDal>().As<IIzinMazeretDal>().SingleInstance();
+
             builder.RegisterType<NobetSistemManager>().As<INobetSistemService>().SingleInstance();
             builder.RegisterType<EfNobetSistemDal>().As<INobetSistemiDal>().SingleInstance();
 

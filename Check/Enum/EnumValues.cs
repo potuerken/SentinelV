@@ -9,7 +9,9 @@ namespace Check.Enum
         Rutbe = 1,
         Sube = 9,
         Cinsiyet = 16,
-        SabitNobetSistemi = 36
+        SabitNobetSistemi = 36,
+        IzinMazeretSebebi = 39
+
     }
 
 
