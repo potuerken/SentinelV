@@ -36,7 +36,7 @@ namespace Entities.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-KVJU9I3\\MSSQLSERVER01;Database=Sentinel; Trusted_Connection=true");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-KVJU9I3\\MSSQLSERVER01;Database=Sentinel;Trusted_Connection=True;");
             }
         }
 
@@ -161,6 +161,12 @@ namespace Entities.Models
                     .HasForeignKey(d => d.NobetSistemId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_NobetSistemSabitNobetciIliski_NobetSistem");
+
+                entity.HasOne(d => d.SabitNobetSistemiKod)
+                    .WithMany(p => p.NobetSistemSabitNobetciIliski)
+                    .HasForeignKey(d => d.SabitNobetSistemiKodId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetSistemSabitNobetciIliski_Kod");
 
                 entity.HasOne(d => d.SabitPersonel)
                     .WithMany(p => p.NobetSistemSabitNobetciIliski)

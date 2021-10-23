@@ -20,7 +20,7 @@ namespace Check.DTO
         public int Id { get; set; }
         public string Ad { get; set; }
         public List<NobetSistemRutbeIliskiDTO> RutbeIliskiListesi { get; set; }
-        public List<int> RutbeListesi { get;set; }
+        public List<int> RutbeListesi { get; set; }
         public List<NobetSistemSabitNobetciIliskiDTO> SabitNobetciListesi { get; set; }
         public List<NobetSistemSubeIliskiDTO> SubeIliskiListesi { get; set; }
         public List<int> SubeListesi { get; set; }
@@ -39,10 +39,14 @@ namespace Check.DTO
         public string ResmiTatilGeceSaat { get; set; }
         public short? ResmiTatilGeceNobetciSayisi { get; set; }
         public bool ResmiTatilYedekNobetciOlacakMi { get; set; }
+        public string RutbeList { get; set; }
+        public string SubeList { get; set; }
+        public string SabitciList { get; set; }
         public bool AktifMi { get; set; }
         public DateTime IlkKayitTarihi { get; set; }
         public int IlkKaydedenKullaniciId { get; set; }
         public DateTime? SonKayitTarihi { get; set; }
         public int? SonKaydedenKullaniciId { get; set; }
+             
     }
 }

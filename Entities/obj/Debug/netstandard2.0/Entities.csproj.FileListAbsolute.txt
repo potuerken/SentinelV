@@ -1,6 +1,7 @@
 C:\Users\tuna4lua\source\repos\SentinelV\Entities\bin\Debug\netstandard2.0\Entities.deps.json
 C:\Users\tuna4lua\source\repos\SentinelV\Entities\bin\Debug\netstandard2.0\Entities.dll
 C:\Users\tuna4lua\source\repos\SentinelV\Entities\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\tuna4lua\source\repos\SentinelV\Entities\obj\Debug\netstandard2.0\Entities.csproj.AssemblyReference.cache
 C:\Users\tuna4lua\source\repos\SentinelV\Entities\obj\Debug\netstandard2.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\tuna4lua\source\repos\SentinelV\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfoInputs.cache
 C:\Users\tuna4lua\source\repos\SentinelV\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfo.cs

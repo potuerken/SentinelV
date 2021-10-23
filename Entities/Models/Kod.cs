@@ -13,6 +13,7 @@ namespace Entities.Models
         {
             InverseUstKod = new HashSet<Kod>();
             NobetSistemRutbeIliski = new HashSet<NobetSistemRutbeIliski>();
+            NobetSistemSabitNobetciIliski = new HashSet<NobetSistemSabitNobetciIliski>();
             NobetSistemSubeIliski = new HashSet<NobetSistemSubeIliski>();
             PersonelCinsiyetKod = new HashSet<Personel>();
             PersonelRutbeKod = new HashSet<Personel>();
@@ -34,6 +35,7 @@ namespace Entities.Models
         public virtual Kod UstKod { get; set; }
         public virtual ICollection<Kod> InverseUstKod { get; set; }
         public virtual ICollection<NobetSistemRutbeIliski> NobetSistemRutbeIliski { get; set; }
+        public virtual ICollection<NobetSistemSabitNobetciIliski> NobetSistemSabitNobetciIliski { get; set; }
         public virtual ICollection<NobetSistemSubeIliski> NobetSistemSubeIliski { get; set; }
         public virtual ICollection<Personel> PersonelCinsiyetKod { get; set; }
         public virtual ICollection<Personel> PersonelRutbeKod { get; set; }

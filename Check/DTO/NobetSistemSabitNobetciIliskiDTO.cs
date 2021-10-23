@@ -9,11 +9,12 @@ namespace Check.DTO
         public NobetSistemSabitNobetciIliskiDTO()
         {
             SabitPersonel = new PersonelDTO();
+            SabitNobetSistemiKod = new KodDTO();
         }
         public int Id { get; set; }
         public int NobetSistemId { get; set; }
         public PersonelDTO SabitPersonel { get; set; }
-        public int SabitNobetSistemiKodId { get; set; }
+        public KodDTO SabitNobetSistemiKod { get; set; }
         public bool AktifMi { get; set; }
         public DateTime IlkKayitTarihi { get; set; }
         public int IlkKaydedenKullaniciId { get; set; }

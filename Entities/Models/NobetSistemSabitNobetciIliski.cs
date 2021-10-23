@@ -20,6 +20,7 @@ namespace Entities.Models
         public int? SonKaydedenKullaniciId { get; set; }
 
         public virtual NobetSistem NobetSistem { get; set; }
+        public virtual Kod SabitNobetSistemiKod { get; set; }
         public virtual Personel SabitPersonel { get; set; }
     }
 }

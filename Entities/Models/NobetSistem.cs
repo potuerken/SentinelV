@@ -30,7 +30,6 @@ namespace Entities.Models
         public bool HaftaSonuYedekNobetciOlacakMi { get; set; }
         public string ResmiTatilGunduzSaat { get; set; }
         public short ResmiTatilGunduzNobetciSayisi { get; set; }
-
         public string ResmiTatilGeceSaat { get; set; }
         public short? ResmiTatilGeceNobetciSayisi { get; set; }
         public bool ResmiTatilYedekNobetciOlacakMi { get; set; }

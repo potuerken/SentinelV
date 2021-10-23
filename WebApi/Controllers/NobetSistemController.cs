@@ -39,6 +39,15 @@ namespace WebApi.Controllers
             return BadRequest(nobetSisAdd.Message);
         }
 
+        [HttpPut("nobetsistemupdated")]
+        public IActionResult NobetSistemUpdated(NobetSistemDTO dto)
+        {
+            var nobetSisAdd = _nobetSistemService.NobetSistemUpdated(dto);
+            if (nobetSisAdd.Success)
+                return Ok(nobetSisAdd);
+            return BadRequest(nobetSisAdd.Message);
+        }
+
 
         [HttpGet("sabitNobetci")]
         public IActionResult SabitNobetci(int nobetSistemId)
@@ -48,6 +57,15 @@ namespace WebApi.Controllers
                 return Ok(sabitPersonelList.Data);
 
             return BadRequest(sabitPersonelList.Message);
+        }
+
+        [HttpPost("nobetsistemsabitadded")]
+        public IActionResult NobetSistemSabitAdded(NobetSistemSabitNobetciIliskiDTO dto)
+        {
+            var sabitNobAdd = _nobetSistemService.NobetSistemSabitAdded(dto);
+            if (sabitNobAdd.Success)
+                return Ok(sabitNobAdd);
+            return BadRequest(sabitNobAdd.Message);
         }
     }
 }

@@ -10,9 +10,8 @@ namespace Business.Abstract
     {
         IDataResult<List<NobetSistemDTO>> GetNobetSistemList();
         IDataResult<List<PersonelDTO>> GetSabitNobetByNobetSistemId(int nobetSistemId);
-
         IResult NobetSistemAdded(NobetSistemDTO dto);
-
-        //IResult NobetSistemUpdated(NobetSistemDTO dto);
+        IResult NobetSistemUpdated(NobetSistemDTO dto);
+        IResult NobetSistemSabitAdded(NobetSistemSabitNobetciIliskiDTO dto);
     }
 }
