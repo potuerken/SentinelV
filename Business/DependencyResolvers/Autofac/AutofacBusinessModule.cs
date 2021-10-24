@@ -19,6 +19,16 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<NobetListesiManager>().As<INobetListesiService>().SingleInstance();
+            builder.RegisterType<EfNobetListesiDal>().As<INobetListesiDal>().SingleInstance();
+
+
+            builder.RegisterType<EfNobetListesiDetayDal>().As<INobetListesiDetayDal>().SingleInstance();
+
+            builder.RegisterType<EfOzelGunListesiDal>().As<IOzelGunListesiDal>().SingleInstance();
+
+            builder.RegisterType<EfPersonelNobetDetayDal>().As<IPersonelNobetDetayDal>().SingleInstance();
+
             builder.RegisterType<IzinMazeretManager>().As<IIzinMazeretService>().SingleInstance();
             builder.RegisterType<EfIzinMazeretDal>().As<IIzinMazeretDal>().SingleInstance();
 

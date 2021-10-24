@@ -11,6 +11,7 @@ namespace Entities.Models
     {
         public NobetSistem()
         {
+            NobetListesi = new HashSet<NobetListesi>();
             NobetSistemRutbeIliski = new HashSet<NobetSistemRutbeIliski>();
             NobetSistemSabitNobetciIliski = new HashSet<NobetSistemSabitNobetciIliski>();
             NobetSistemSubeIliski = new HashSet<NobetSistemSubeIliski>();
@@ -39,6 +40,7 @@ namespace Entities.Models
         public DateTime? SonKayitTarihi { get; set; }
         public int? SonKaydedenKullaniciId { get; set; }
 
+        public virtual ICollection<NobetListesi> NobetListesi { get; set; }
         public virtual ICollection<NobetSistemRutbeIliski> NobetSistemRutbeIliski { get; set; }
         public virtual ICollection<NobetSistemSabitNobetciIliski> NobetSistemSabitNobetciIliski { get; set; }
         public virtual ICollection<NobetSistemSubeIliski> NobetSistemSubeIliski { get; set; }

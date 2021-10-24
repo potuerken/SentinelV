@@ -23,12 +23,16 @@ namespace Entities.Models
         public virtual DbSet<IzinMazeret> IzinMazeret { get; set; }
         public virtual DbSet<Kod> Kod { get; set; }
         public virtual DbSet<KodTip> KodTip { get; set; }
+        public virtual DbSet<NobetListesi> NobetListesi { get; set; }
+        public virtual DbSet<NobetListesiDetay> NobetListesiDetay { get; set; }
         public virtual DbSet<NobetSistem> NobetSistem { get; set; }
         public virtual DbSet<NobetSistemRutbeIliski> NobetSistemRutbeIliski { get; set; }
         public virtual DbSet<NobetSistemSabitNobetciIliski> NobetSistemSabitNobetciIliski { get; set; }
         public virtual DbSet<NobetSistemSubeIliski> NobetSistemSubeIliski { get; set; }
         public virtual DbSet<OperationClaims> OperationClaims { get; set; }
+        public virtual DbSet<OzelGunListesi> OzelGunListesi { get; set; }
         public virtual DbSet<Personel> Personel { get; set; }
+        public virtual DbSet<PersonelNobetDetay> PersonelNobetDetay { get; set; }
         public virtual DbSet<UserOperationClaims> UserOperationClaims { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
@@ -38,6 +42,7 @@ namespace Entities.Models
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=DESKTOP-KVJU9I3\\MSSQLSERVER01;Database=Sentinel;Trusted_Connection=True;");
+                //optionsBuilder.UseSqlServer("Server=DESKTOP-V8DP315;Database=Sentinel; Trusted_Connection=true");
             }
         }
 
@@ -124,6 +129,50 @@ namespace Entities.Models
                     .WithMany(p => p.InverseUstKod)
                     .HasForeignKey(d => d.UstKodId)
                     .HasConstraintName("FK_KodTipUstKodId_KodTipId");
+            });
+
+            modelBuilder.Entity<NobetListesi>(entity =>
+            {
+                entity.Property(e => e.IlkKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.SonKaydedenKullaniciId)
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
+
+                entity.HasOne(d => d.NobetSistem)
+                    .WithMany(p => p.NobetListesi)
+                    .HasForeignKey(d => d.NobetSistemId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetListesi_NobetSistem");
+            });
+
+            modelBuilder.Entity<NobetListesiDetay>(entity =>
+            {
+                entity.Property(e => e.IlkKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.Tarih).HasColumnType("datetime");
+
+                entity.HasOne(d => d.NobetListesi)
+                    .WithMany(p => p.NobetListesiDetay)
+                    .HasForeignKey(d => d.NobetListesiId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetListesiDetay_NobetListesi");
+
+                entity.HasOne(d => d.Personel)
+                    .WithMany(p => p.NobetListesiDetay)
+                    .HasForeignKey(d => d.PersonelId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetListesiDetay_Personel");
+
+                entity.HasOne(d => d.TurKod)
+                    .WithMany(p => p.NobetListesiDetay)
+                    .HasForeignKey(d => d.TurKodId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NobetListesiDetay_Kod");
             });
 
             modelBuilder.Entity<NobetSistem>(entity =>
@@ -229,6 +278,21 @@ namespace Entities.Models
                 entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
             });
 
+            modelBuilder.Entity<OzelGunListesi>(entity =>
+            {
+                entity.Property(e => e.BaslangicTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.BitisTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.IlkKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.OzelGunAdi)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
+            });
+
             modelBuilder.Entity<Personel>(entity =>
             {
                 entity.Property(e => e.Ad)
@@ -282,6 +346,19 @@ namespace Entities.Models
                     .HasForeignKey(d => d.SubeKodId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Personel_SubeKod");
+            });
+
+            modelBuilder.Entity<PersonelNobetDetay>(entity =>
+            {
+                entity.Property(e => e.IlkKayitTarihi).HasColumnType("datetime");
+
+                entity.Property(e => e.SonKayitTarihi).HasColumnType("datetime");
+
+                entity.HasOne(d => d.Personel)
+                    .WithMany(p => p.PersonelNobetDetay)
+                    .HasForeignKey(d => d.PersonelId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_PersonelNobetDetay_Personel");
             });
 
             modelBuilder.Entity<UserOperationClaims>(entity =>

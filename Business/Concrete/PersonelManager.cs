@@ -18,12 +18,14 @@ namespace Business.Concrete
     {
         private readonly IPersonelDal _personelDal;
         private readonly IMapper _mapper;
+        private readonly IPersonelNobetDetayDal _personelNobetDetayDal;
 
 
-        public PersonelManager(IPersonelDal personelDal, IMapper mapper)
+        public PersonelManager(IPersonelDal personelDal, IMapper mapper, IPersonelNobetDetayDal personelNobetDetayDal)
         {
             _personelDal = personelDal;
             _mapper = mapper;
+            _personelNobetDetayDal = personelNobetDetayDal;
         }
 
         [TransactionScopeAspect]
@@ -43,10 +45,36 @@ namespace Business.Concrete
             dtoRequest.SonKaydedenKullaniciId = null;
             dtoRequest.IlkKayitTarihi = DateTime.Now;
             dtoRequest.IlkKaydedenKullaniciId = dto.IlkKaydedenKullaniciId;
-            int ess = _personelDal.Add(dtoRequest).FirstOrDefault().Key;
+            var result = _personelDal.Add(dtoRequest);
+            int ess = result.FirstOrDefault().Key;
+            var personel = result.FirstOrDefault().Value;
+
             if (ess > 0)
             {
-                return new SuccessResult("PERSONEL EKLEME İŞLEMİ BAŞARILI");
+                PersonelNobetDetay personelNobetDetay = new PersonelNobetDetay
+                {
+                    AktifMi = true,
+                    CarsambaNobetSayisi = 0,
+                    CumaNobetSayisi = 0,
+                    CumartesiNobetSayisi = 0,
+                    IlkKaydedenKullaniciId = dto.IlkKaydedenKullaniciId,
+                    IlkKayitTarihi = DateTime.Now,
+                    OzelGunNobetSayisi = 0,
+                    PazarNobetSayisi = 0,
+                    PazartesiNobetSayisi = 0,
+                    PersembeNobetSayisi = 0,
+                    PersonelId = personel.Id,
+                    SaliNobetSayisi = 0
+                };
+
+                var essDetay = _personelNobetDetayDal.Add(personelNobetDetay).FirstOrDefault().Key;
+                if (essDetay> 0)
+                {
+                    return new SuccessResult("PERSONEL EKLEME İŞLEMİ BAŞARILI");
+
+                }
+                return new ErrorResult("PERSONEL EKLEME İŞLEMİ SIRASINDA HATA MEYDANA GELDİ");
+
             }
             else
             {

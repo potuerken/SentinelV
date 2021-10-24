@@ -12,7 +12,9 @@ namespace Entities.Models
         public Personel()
         {
             IzinMazeret = new HashSet<IzinMazeret>();
+            NobetListesiDetay = new HashSet<NobetListesiDetay>();
             NobetSistemSabitNobetciIliski = new HashSet<NobetSistemSabitNobetciIliski>();
+            PersonelNobetDetay = new HashSet<PersonelNobetDetay>();
         }
 
         public int Id { get; set; }
@@ -39,6 +41,8 @@ namespace Entities.Models
         public virtual Kod RutbeKod { get; set; }
         public virtual Kod SubeKod { get; set; }
         public virtual ICollection<IzinMazeret> IzinMazeret { get; set; }
+        public virtual ICollection<NobetListesiDetay> NobetListesiDetay { get; set; }
         public virtual ICollection<NobetSistemSabitNobetciIliski> NobetSistemSabitNobetciIliski { get; set; }
+        public virtual ICollection<PersonelNobetDetay> PersonelNobetDetay { get; set; }
     }
 }

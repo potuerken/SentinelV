@@ -42,6 +42,17 @@ namespace Business.Mapper.AutoMapper
             CreateMap<IzinMazeret, IzinMazeretDTO>()
                 .ForMember(a => a.Durumu, o => o.MapFrom(s => (s.BitisTarihi > System.DateTime.Today && s.BaslangicTarihi < System.DateTime.Today) ? "Devam Ediyor" : (s.BitisTarihi < System.DateTime.Today && s.BaslangicTarihi < System.DateTime.Today) ?  "İzin Tamamlanmış" : "İzin Başlamamış"));
 
+            CreateMap<NobetListesiDTO, NobetListesi>();
+            CreateMap<NobetListesi, NobetListesiDTO>();
+
+            CreateMap<NobetListesiDetayDTO, NobetListesiDetay>();
+            CreateMap<NobetListesiDetay, NobetListesiDetayDTO>();
+
+            CreateMap<OzelGunListesiDTO, OzelGunListesi>();
+            CreateMap<OzelGunListesi, OzelGunListesiDTO>();
+
+            CreateMap<PersonelNobetDetayDTO, PersonelNobetDetay>();
+            CreateMap<PersonelNobetDetay, PersonelNobetDetayDTO>();
         }
     }
 }
