@@ -1964,6 +1964,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Check/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Check.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Check.dll": {}
+        }
+      },
       "Core/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -6955,6 +6968,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Check/1.0.0": {
+      "type": "project",
+      "path": "../Check/Check.csproj",
+      "msbuildProject": "../Check/Check.csproj"
+    },
     "Core/1.0.0": {
       "type": "project",
       "path": "../Core/Core.csproj",
@@ -6968,6 +6986,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Check >= 1.0.0",
       "Core >= 1.0.0",
       "Entities >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
@@ -7005,6 +7024,9 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+            "C:\\Users\\tuna4lua\\source\\repos\\SentinelV\\Check\\Check.csproj": {
+              "projectPath": "C:\\Users\\tuna4lua\\source\\repos\\SentinelV\\Check\\Check.csproj"
+            },
             "C:\\Users\\tuna4lua\\source\\repos\\SentinelV\\Core\\Core.csproj": {
               "projectPath": "C:\\Users\\tuna4lua\\source\\repos\\SentinelV\\Core\\Core.csproj"
             },

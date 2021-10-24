@@ -10,7 +10,8 @@ namespace Check.Enum
         Sube = 9,
         Cinsiyet = 16,
         SabitNobetSistemi = 36,
-        IzinMazeretSebebi = 39
+        IzinMazeretSebebi = 39,
+        NobetTuru = 47
 
     }
 
@@ -23,6 +24,18 @@ namespace Check.Enum
         IdariIslerSubeMudurlugu = 13,
         EgitimSubeMudurlugu = 14,
         SirketlerSubeMudurlugu = 15
+    }
+    public enum NobetTuruEnum
+    {
+        Gece = 48,
+        Gunduz = 49,
+        Yedek = 50
+    }
+
+    public enum SabitNobetSistemiEnum
+    {
+        HaftaIciGunduz = 37,
+        BirArtiBirGece = 38
     }
     
     

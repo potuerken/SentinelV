@@ -16,7 +16,9 @@ namespace Check.DTO
         public int Id { get; set; }
         public NobetListesiDTO NobetListesi { get; set; }
         public KodDTO TurKod { get; set; }
+        public string Saat { get; set; }
         public DateTime Tarih { get; set; }
+        public string STarih { get { return Tarih.ToShortDateString(); } }
         public PersonelDTO Personel { get; set; }
         public bool AktifMi { get; set; }
         public DateTime IlkKayitTarihi { get; set; }

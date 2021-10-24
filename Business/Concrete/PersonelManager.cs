@@ -132,5 +132,6 @@ namespace Business.Concrete
                 return new SuccessResult("ŞUBEDE PERSONEL BULUNMAKTA");
             }
         }
+
     }
 }

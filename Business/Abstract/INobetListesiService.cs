@@ -13,5 +13,7 @@ namespace Business.Abstract
         IResult NobetListeAdded(NobetListesiDTO dto);
 
         IDataResult<List<NobetListesiDetayDTO>> GetNobetListesiDetay(int Id);
+
+        IDataResult<List<NobetListesiDetayDTO>> NobetListesiOlusturma(int Id);
     }
 }

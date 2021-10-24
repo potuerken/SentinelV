@@ -178,6 +178,16 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
+        public int AddRange(IEnumerable<TEntity> entities)
+        {
+            using (var db = new TContext())
+            {
+                db.Entry(entities).State = EntityState.Added;
+                int eSS = db.SaveChanges();
+                return eSS;
+            }
+        }
+
         public int Update(TEntity entity)
         {
             using (var db = new TContext())

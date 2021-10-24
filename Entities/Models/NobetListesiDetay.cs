@@ -12,6 +12,7 @@ namespace Entities.Models
         public int Id { get; set; }
         public int NobetListesiId { get; set; }
         public int TurKodId { get; set; }
+        public string Saat { get; set; }
         public DateTime Tarih { get; set; }
         public int PersonelId { get; set; }
         public bool AktifMi { get; set; }

@@ -1533,6 +1533,7 @@
       },
       "DataAccess/1.0.0": {
         "dependencies": {
+          "Check": "1.0.0",
           "Core": "1.0.0",
           "Entities": "1.0.0"
         },

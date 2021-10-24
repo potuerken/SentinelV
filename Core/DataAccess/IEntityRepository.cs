@@ -25,6 +25,8 @@ namespace Core.DataAccess
         //T AddTurnRow(T entity);
         int Update(T entity);
         IQueryable<T> Include(string[] includes);
+
+        int AddRange(IEnumerable<T> entities);
         //IEnumerable<T> Include(params Expression<Func<T, object>>[] includes);
         //IQueryable<T> IncludeMultiple<T>(IQueryable<T> query, params Expression<Func<T, object>>[] includes);
     }

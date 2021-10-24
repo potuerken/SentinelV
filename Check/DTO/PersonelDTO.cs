@@ -58,6 +58,14 @@ namespace Check.DTO
         public DateTime IlkKayitTarihi { get; set; }
         public DateTime? SonKayitTarihi { get; set; }
 
+        public string TamAd
+        {
+            get
+            {
+                return Ad + " " + Soyad;
+            }
+        }
+
         public int IlkKaydedenKullaniciId { get; set; }
         public int? SonKaydedenKullaniciId { get; set; }
         public bool AktifMi { get; set; }
